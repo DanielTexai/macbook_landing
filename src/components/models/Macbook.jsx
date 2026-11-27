@@ -9,12 +9,12 @@ Title: macbook pro M3 16 inch 2024
 */
 
 import React from 'react'
-import { useGLTF } from '@react-three/drei'
+import { useGLTF, useTexture } from '@react-three/drei'
 
-export function Model(props) {
-  const { nodes, materials } = useGLTF('/model/macbook-transformed.glb')
+export function MacbookModel(props) {
+  const { nodes, materials } = useGLTF('/models/macbook-transformed.glb')
 
-    const texture = useTexture('/screen.png')
+    const texture = useTexture('/screen.png');
 
   return (
     <group {...props} dispose={null}>
@@ -43,4 +43,4 @@ export function Model(props) {
   )
 }
 
-useGLTF.preload('/macbook-transformed.glb')
+useGLTF.preload('/models/macbook-transformed.glb')
